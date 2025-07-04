@@ -1,0 +1,19 @@
+<section class="projects-section">
+  <div class="container">
+    <h1 class="text-center mb-5">My Projects</h1>
+    <p class="text-center text-muted mb-4">
+      Here are some featured projects that I have developed using Angular, JavaScript, HTML/CSS, and other frontend technologies. Click to explore the source code.
+    </p>
+
+    <!-- Stacked Project Cards -->
+    <div class="d-flex flex-column gap-4">
+      <div class="project-card w-100" *ngFor="let project of projects">
+        <h4>{{ project.title }}</h4>
+        <p>{{ project.description }}</p>
+        <a [href]="project.link" target="_blank" class="btn btn-outline-primary">
+          View on GitHub
+        </a>
+      </div>
+    </div>
+  </div>
+</section>

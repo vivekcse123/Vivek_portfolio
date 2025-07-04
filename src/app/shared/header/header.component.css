@@ -1,0 +1,23 @@
+body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #f4f4f4;
+    }
+
+    .navbar-brand {
+      font-weight: bold;
+      font-size: 1.6rem;
+    }
+    .logo-icon {
+      font-size: 1.8rem;
+    }
+
+.logo-text {
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: #fff;
+  letter-spacing: 1px;
+}
+
+.logo-text strong {
+  color: #FFD700;
+}
