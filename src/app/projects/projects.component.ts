@@ -11,29 +11,29 @@ import { Component } from '@angular/core';
 export class ProjectsComponent {
   projects = [
     {
-      title: 'Employee Management System',
-      description: 'A responsive Angular web app to manage employee data with CRUD operations using RESTful APIs.',
-      link: 'https://github.com/vivekcse123/employee-management-system'
+      title: 'Customer Management System',
+      description: 'A responsive Angular web app to manage Customers data with CRUD operations using RESTful APIs.',
+      link: 'https://github.com/vivekcse123/CMS-Project'
     },
     {
       title: 'Portfolio Website',
-      description: 'My personal portfolio website built using HTML, CSS, JavaScript, and Bootstrap.',
-      link: 'https://github.com/vivekcse123/portfolio'
+      description: 'My personal portfolio website built using Angular, TypeScript, HTML, CSS, JavaScript, and Bootstrap.',
+      link: 'https://github.com/vivekcse123/Vivek_portfolio'
     },
     {
-      title: 'Mini Calculator App',
-      description: 'A simple JavaScript calculator with modern UI and keyboard support.',
-      link: 'https://github.com/vivekcse123/mini-calculator'
+      title: 'Menstruation Tracker',
+      description: 'An Angular-based Single Page Application to track the menstrual cycle of female employees in an organization.',
+      link: 'https://github.com/vivekcse123/MS_Tracker'
     },
     {
-      title: 'Color Picker Tool',
-      description: 'Tool that displays RGB, HEX, CMYK values with live preview and clipboard copy.',
-      link: 'https://github.com/vivekcse123/color-picker'
+      title: 'Angular Forms',
+      description: 'Angular Forms: Template-Driven and Reactive Forms with proper validations.',
+      link: 'https://github.com/vivekcse123/Angular-Forms'
     },
     {
-      title: 'Learning Management System',
-      description: 'LMS platform to track daily work, upload notes, and monitor progress (Angular-based).',
-      link: 'https://github.com/vivekcse123/lms-app'
+      title: 'Angular Sharing Data',
+      description: 'Sharing data between components using Observable.2-5',
+      link: 'https://github.com/vivekcse123/Angular-Observable'
     }
   ];
 }
