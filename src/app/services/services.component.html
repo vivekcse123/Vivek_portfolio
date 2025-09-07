@@ -1,95 +1,148 @@
-<!-- <section class="services-section">
+<section class="services-section">
   <div class="container">
-
-    <!-- Heading 
-    <h1 class="text-center mb-4">My Services</h1>
+    <h1 class="text-center mb-4">Services</h1>
     <p class="text-center mb-5 text-muted">
-      I offer tailored services to help you build your personal brand online and on paper. Whether you're a student, developer, or professional — my portfolio and resume services are crafted to make your profile stand out.
+      I offer tailored services to help you build your personal brand online and on paper. Whether you're a student, developer, or professional — my services are crafted to make your profile stand out.
     </p>
 
-    <!-- Terms and Conditions 
-    <div class="terms-box mb-5">
-      <h5 class="mb-3">Terms & Conditions</h5>
-      <ul class="text-muted">
-        <li>Turnaround time is 2-5 working days based on complexity.</li>
-        <li>50% advance required for Advanced and Complete packages.</li>
-        <li>Includes 2 free revisions. Additional revisions may cost extra.</li>
-        <li>Final files provided in HTML, PDF, or DOCX based on service.</li>
-      </ul>
-    </div>
+    <!-- Terms and Conditions -->
+ <div class="terms-box mb-5">
+  <h5 class="mb-3">Terms & Conditions</h5>
+  <ul class="text-muted">
+    <li>Turnaround time is 2-5 working days based on complexity.</li>
+    <li>Includes 2 free revisions. Additional revisions may cost extra.</li>
+    <li>Final files can be provided in HTML, PDF, or DOCX format based on service.</li>
+  </ul>
+</div>
 
-    <!-- Service Offerings 
+
+    <!-- Service Offerings -->
     <div class="row g-5 mb-5">
       <div class="col-md-6">
         <div class="service-card border-start border-4 border-primary shadow-sm">
-          <h3 class="text-primary">Portfolio Creation</h3>
-          <p class="text-muted">Custom portfolios using HTML, CSS, Angular, and JS.</p>
-          <ul class="service-pricing">
-            <li><strong>Basic (₹500):</strong> One-page responsive layout</li>
-            <li><strong>Advanced (₹1000):</strong> Multi-section with interactivity</li>
-            <li><strong>Complete (₹2000):</strong> Blog, contact form, and backend-ready</li>
+          <h3 class="text-primary">Career Development</h3>
+          <ul class="service-pricing text-muted">
+            <li>Career Development Coaching</li>
+            <li>Resume Review & Optimization</li>
+            <li>Interview Preparation</li>
+            <li>LinkedIn Profile Creation</li>
           </ul>
         </div>
       </div>
 
       <div class="col-md-6">
         <div class="service-card border-start border-4 border-success shadow-sm">
-          <h3 class="text-success">Resume Creation</h3>
-          <p class="text-muted">Professional resumes optimized for ATS systems.</p>
-          <ul class="service-pricing">
-            <li><strong>Basic (₹500):</strong> Clean layout, one-page resume</li>
-            <li><strong>Advanced (₹1000):</strong> Custom format, multi-page support</li>
-            <li><strong>Complete (₹2000):</strong> Resume + Cover + LinkedIn profile</li>
+          <h3 class="text-success">Learning & Mentorship</h3>
+          <ul class="service-pricing text-muted">
+            <li>Personalized Teaching & Training</li>
+            <li>Technical Mentorship</li>
+            <li>Portfolio Guidance</li>
+            <li>Continuous Career Support</li>
           </ul>
         </div>
       </div>
     </div>
 
-    <!-- Contact Form 
+    <!-- Contact Form -->
     <div class="contact-box shadow p-4 bg-white rounded">
       <h3 class="mb-4 text-center">Interested? Let's Connect!</h3>
-      <form>
+
+      <form [formGroup]="contactForm">
         <div class="row mb-3">
           <div class="col-md-6">
             <label class="form-label">Full Name</label>
-            <input type="text" class="form-control" placeholder="Your full name" required>
+            <input type="text" class="form-control" placeholder="Your full name" formControlName="name">
+            <div *ngIf="contactForm.get('name')?.invalid && isSubmitted">
+              <small *ngIf="contactForm.get('name')?.errors?.['required']" style="color: red;">
+                Name is required....
+              </small>
+              <small *ngIf="contactForm.get('name')?.errors?.['pattern']" style="color: red;">
+               Invalid name....
+              </small>
+            </div>
+            
           </div>
           <div class="col-md-6">
             <label class="form-label">Email</label>
-            <input type="email" class="form-control" placeholder="you@example.com" required>
+            <input type="email" class="form-control" placeholder="you@example.com" formControlName="email">
+            <div *ngIf="contactForm.get('name')?.invalid && isSubmitted">
+              <small *ngIf="contactForm.get('email')?.errors?.['required']" style="color: red;">
+                Email is required....
+              </small>
+              <small *ngIf="contactForm.get('email')?.errors?.['email']" style="color: red;">
+               Invalid email....
+              </small>
+            </div>
           </div>
         </div>
-
         <div class="mb-3">
           <label class="form-label">Mobile</label>
-          <input type="tel" class="form-control" placeholder="+91 XXXXX XXXXX" required>
+          <input type="tel" class="form-control" placeholder="+91 XXXXX XXXXX" formControlName="mobile">
+          <div *ngIf="contactForm.get('mobile')?.invalid && isSubmitted">
+              <small *ngIf="contactForm.get('mobile')?.errors?.['required']" style="color: red;">
+                Mobile number is required....
+              </small>
+              <small *ngIf="contactForm.get('mobile')?.errors?.['pattern']" style="color: red;">
+               Invalid mobile number....
+              </small>
+            </div>
         </div>
+       <div class="mb-3">
+  <label class="form-label">Services Interested In</label>
 
-        <div class="mb-3">
-          <label class="form-label">Service Interested In</label>
-          <select class="form-select" required>
-            <option value="" disabled selected>Select a service</option>
-            <option>Portfolio - Basic</option>
-            <option>Portfolio - Advanced</option>
-            <option>Portfolio - Complete</option>
-            <option>Resume - Basic</option>
-            <option>Resume - Advanced</option>
-            <option>Resume - Complete</option>
-          </select>
-        </div>
+  <div class="form-check">
+    <input class="form-check-input" type="checkbox" value="Career Development Coaching" id="service1" formControlName="careerDevelopment">
+    <label class="form-check-label" for="service1">Career Development Coaching</label>
+  </div>
 
+  <div class="form-check">
+    <input class="form-check-input" type="checkbox" value="Resume Review" id="service2" formControlName="resumeReview">
+    <label class="form-check-label" for="service2">Resume Review</label>
+  </div>
+
+  <div class="form-check">
+    <input class="form-check-input" type="checkbox" value="Interview Preparation" id="service3" formControlName="interviewPreparation">
+    <label class="form-check-label" for="service3">Interview Preparation</label>
+  </div>
+
+  <div class="form-check">
+    <input class="form-check-input" type="checkbox" value="Teaching & Training" id="service4" formControlName="teachingTraining">
+    <label class="form-check-label" for="service4">Teaching & Training</label>
+  </div>
+
+  <div class="form-check">
+    <input class="form-check-input" type="checkbox" value="Mentorship" id="service5" formControlName="mentorship">
+    <label class="form-check-label" for="service5">Mentorship</label>
+  </div>
+
+  <div class="form-check">
+    <input class="form-check-input" type="checkbox" value="LinkedIn Profile Creation" id="service6" formControlName="linkedinProfile">
+    <label class="form-check-label" for="service6">LinkedIn Profile Creation</label>
+  </div>
+  <div class="form-check">
+    <input class="form-check-input" type="checkbox" value="Portfolio Guidance" id="service7" formControlName="portfolioGuidance">
+    <label class="form-check-label" for="service7">Portfolio Guidance</label>
+  </div>
+</div>
         <div class="mb-3">
           <label class="form-label">Message</label>
-          <textarea class="form-control" rows="4" placeholder="Any specific requirements?"></textarea>
+          <textarea class="form-control" rows="4" placeholder="Any specific requirements?" formControlName="message"></textarea>
+          <div *ngIf="contactForm.get('message')?.invalid && isSubmitted">
+              <small *ngIf="contactForm.get('message')?.errors?.['minlength']" style="color: red;">
+               Length can't be less than 50 character...
+              </small>
+              <small *ngIf="contactForm.get('message')?.errors?.['maxlength']" style="color: red;">
+               Length can't be more than 300 character...
+              </small>
+            </div>
+            MinChar: {{count}}, MaxChar: 300
         </div>
-
-        <button type="submit" class="btn btn-primary w-100">Send Request</button>
+        @if(message){
+          <p style="color: green;">{{message}}</p>
+        }
+        <button class="btn btn-primary w-100" (click)="sendData()">Send Request</button>
       </form>
     </div>
 
   </div>
-</section> -->
-
-<section class="services-section">
-  <h1>Coming Soon...</h1>
 </section>
