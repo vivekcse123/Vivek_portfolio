@@ -6,32 +6,67 @@
     </p>
 
     <div class="contact-card mx-auto">
-      <form class="contact-form">
+      <form class="contact-form" [formGroup]="contactUsFrom">
         <div class="row g-4">
           <div class="col-md-6">
             <label for="name" class="form-label">Full Name</label>
-            <input type="text" id="name" class="form-control" placeholder="John Doe" required />
+            <input type="text" id="name" class="form-control" placeholder="John Doe" formControlName="name"/>
+            <div *ngIf="isSubmitted && contactUsFrom.get('name')?.invalid">
+              <small *ngIf="contactUsFrom.get('name')?.errors?.['required']" style="color: red;">
+                Name is requried...!
+              </small>
+              <small *ngIf="contactUsFrom.get('name')?.errors?.['pattern']" style="color: red;">
+                Invalid name...!
+              </small>
+            </div>
           </div>
           <div class="col-md-6">
             <label for="email" class="form-label">Email Address</label>
-            <input type="email" id="email" class="form-control" placeholder="you@example.com" required />
+            <input type="email" id="email" class="form-control" placeholder="you@example.com" formControlName="email"/>
+            <div *ngIf="contactUsFrom.get('email')?.invalid && isSubmitted">
+              <small *ngIf="contactUsFrom.get('email')?.errors?.['required']" style="color: red;">
+                Email is required...!
+              </small>
+               <small *ngIf="contactUsFrom.get('email')?.errors?.['email']" style="color: red;">
+                Invalid email...!
+              </small>
+            </div>
           </div>
           <div class="col-md-6">
             <label for="mobile" class="form-label">Mobile Number</label>
-            <input type="tel" id="mobile" class="form-control" placeholder="+91 XXXXX XXXXX" />
+            <input type="tel" id="mobile" class="form-control" placeholder="+91 XXXXX XXXXX" formControlName="mobile"/>
+            <div *ngIf="contactUsFrom.get('mobile')?.invalid && isSubmitted">
+              <small *ngIf="contactUsFrom.get('mobile')?.errors?.['required']" style="color: red;">
+                Mobile is required...!
+              </small>
+              <small *ngIf="contactUsFrom.get('mobile')?.errors?.['pattern']" style="color: red;">
+                Invalid mobile number...!
+              </small>
+            </div>
           </div>
           <div class="col-md-6">
             <label for="subject" class="form-label">Subject</label>
-            <input type="text" id="subject" class="form-control" placeholder="e.g. Portfolio Request" />
+            <input type="text" id="subject" class="form-control" placeholder="e.g. Portfolio Request" formControlName="subject"/>
+            <div *ngIf="contactUsFrom.get('subject')?.invalid && isSubmitted">
+              <small *ngIf="contactUsFrom.get('subject')?.errors?.['required']" style="color: red;">
+                Subject is required...!
+              </small>
+              <small *ngIf="contactUsFrom.get('subject')?.errors?.['minlength'] || contactUsFrom.get('subject')?.errors?.['maxlength']" style="color: red;">
+                Subject can't less than 10 and more than 20 characters...!
+              </small>
+            </div>
           </div>
           <div class="col-12">
             <label for="message" class="form-label">Your Message</label>
-            <textarea id="message" class="form-control" rows="6" placeholder="Describe your query or project in detail..." required></textarea>
+            <textarea id="message" class="form-control" rows="6" placeholder="Describe your query or project in detail..." formControlName="message"></textarea>
           </div>
         </div>
 
         <div class="text-center mt-4">
-          <button type="submit" class="btn btn-primary px-5 py-2">Send Message</button>
+           @if(message){
+          <p style="color: green;">{{message}}</p>
+        }
+          <button type="submit" class="btn btn-primary px-5 py-2" (click)="submit()">Send Message</button>
         </div>
       </form>
     </div>
