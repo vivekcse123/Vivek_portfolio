@@ -1,4 +1,4 @@
-import { Component, ElementRef, AfterViewInit, ViewChild, NgZone } from '@angular/core';
+import { Component, ElementRef, AfterViewInit, ViewChild, NgZone, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterLink } from '@angular/router';
 
@@ -9,11 +9,15 @@ import { RouterLink } from '@angular/router';
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.css']
 })
-export class HomeComponent implements AfterViewInit {
+export class HomeComponent implements AfterViewInit, OnInit {
   @ViewChild('typewriter') typewriterElement!: ElementRef;
 
   constructor(private zone: NgZone) {}
-
+  ngOnInit(): void {
+      setTimeout(() =>{
+        this.changeColor();
+      }, 1000);
+  }
   ngAfterViewInit(): void {
     this.zone.runOutsideAngular(() => {
       const roles = [
@@ -57,5 +61,10 @@ export class HomeComponent implements AfterViewInit {
       textElement.textContent = '';
       typeWriterEffect();
     });
+  }
+  bgColor: string = "";
+  changeColor(){
+    const colors = ["red", "yellow", "orange", "Brown", "purple"];
+    this.bgColor = colors[Math.floor(Math.random() * colors.length)];
   }
 }

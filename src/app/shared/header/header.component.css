@@ -21,3 +21,18 @@ body {
 .logo-text strong {
   color: #FFD700;
 }
+
+.nav-link.active {          
+  transition: 0.3s ease;  
+    color: white !important;    
+  border-radius: 6px; 
+  border-bottom: 2px solid yellow; 
+  cursor: pointer;    
+}
+
+.nav-link:hover {
+  color: #fff !important;       
+  background-color: #8c984c;     
+  border-radius: 6px;            
+  font-weight: 600;   
+}
