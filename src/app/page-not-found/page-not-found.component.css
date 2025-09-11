@@ -1,0 +1,40 @@
+.not-found-container {
+    position: relative;
+    padding: 30px 5px;
+    text-align: center;
+    top: 20px;
+}
+
+.not-found-container h1 {
+  font-size: 8rem;
+  font-weight: bold;
+  color: #ff4757; 
+  margin-bottom: 10px;
+}
+
+.not-found-container h2 {
+  font-size: 2rem;
+  margin-bottom: 15px;
+}
+
+.not-found-container p {
+  font-size: 1.1rem;
+  margin-bottom: 25px;
+  color: #666;
+}
+
+.home-btn {
+  display: inline-block;
+  padding: 12px 25px;
+  font-size: 1rem;
+  font-weight: 600;
+  text-decoration: none;
+  color: #fff;
+  background-color: #007bff;
+  border-radius: 6px;
+  transition: 0.3s ease;
+}
+
+.home-btn:hover {
+  background-color: #0056b3;
+}
