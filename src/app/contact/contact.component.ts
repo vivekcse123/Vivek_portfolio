@@ -28,7 +28,7 @@ export class ContactComponent {
     if(this.contactUsFrom.invalid){
       return;
     }
-    this.message = "Sending your message...";
+    this.message = "Please wait! sending your data...!";
 
     const templateParams = {
     name: this.contactUsFrom.value.name,

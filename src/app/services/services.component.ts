@@ -74,7 +74,7 @@ export class ServicesComponent implements OnInit{
     return;
   }
 
-  this.message = "Sending your message...";
+  this.message = "Please wait! sending your data...!";
 
   const templateParams = {
     name: this.contactForm.value.name,
@@ -92,7 +92,10 @@ export class ServicesComponent implements OnInit{
     '9g7BaOkPC1lcih73D'
   )
   .then((result: EmailJSResponseStatus) => {
-    this.message = "Thank you! We’ll get back to you soon.";
+    this.message = "Thank you! We'll get back to you soon...!";
+    setTimeout(() =>{
+      this.message = "";
+    }, 3000);
     this.contactForm.reset();
   }, (error) => {
     this.message = "Failed to send message. Please try again.";
