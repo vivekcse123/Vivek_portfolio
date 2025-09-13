@@ -10,7 +10,7 @@ export const routes: Routes = [
     {path: '', redirectTo: 'home', pathMatch: 'full'},
     {path: 'home', component: HomeComponent, title: "Welcome to Vivek's Portfolio"},
     {path: 'project', component: ProjectsComponent, title: 'My Projects'},
-    {path: 'resume', component: ResumeComponent, title: 'Vivek\'s Resume'},
+    {path: 'resume', component: ResumeComponent, title: 'It\'s Me'},
     {path: 'services', component: ServicesComponent, title: 'My Services'},
     {path: 'contact', component: ContactComponent, title: 'Contact Me'},
     {path: '**', component: PageNotFoundComponent, title: "Page not found!"}
