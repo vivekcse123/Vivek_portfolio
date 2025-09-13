@@ -1,1 +1,147 @@
-/* You can add global styles to this file, and also import other style files */
+🌙 Dark theme
+body.dark-theme {
+  background-color: #121212;
+  color: #e0e0e0;
+}
+
+body.dark-theme a {
+  color: #bb86fc;
+}
+body.dark-theme a:hover {
+  color: #d0a8ff;
+}
+
+body.dark-theme .navbar {
+  background-color: #1e1e1e !important;
+}
+body.dark-theme .nav-link {
+  color: #e0e0e0 !important;
+}
+body.dark-theme .nav-link.active {
+  color: #bb86fc !important;
+}
+
+body.dark-theme .card,
+body.dark-theme .border,
+body.dark-theme .shadow-sm {
+  background-color: #1e1e1e !important;
+  border-color: #333 !important;
+  color: #f1f1f1 !important;
+}
+
+body.dark-theme .btn {
+  background-color: #333;
+  color: #f1f1f1;
+  border-color: #555;
+}
+body.dark-theme .btn:hover {
+  background-color: #444;
+}
+
+body.dark-theme .list-group-item {
+  background: transparent;
+  color: #f1f1f1;
+  border-color: #333;
+}
+
+body.dark-theme input,
+body.dark-theme textarea,
+body.dark-theme select {
+  background-color: #1e1e1e;
+  color: #f1f1f1;
+  border: 1px solid #444;
+}
+body.dark-theme input::placeholder,
+body.dark-theme textarea::placeholder {
+  color: #aaa;
+}
+
+body.dark-theme footer {
+  background-color: #1a1a1a;
+  color: #bbb;
+}
+
+body.dark-theme ::-webkit-scrollbar-thumb {
+  background: #444;
+}
+body.dark-theme ::-webkit-scrollbar-thumb:hover {
+  background: #666;
+}
+
+
+
+/* ☀️ Light theme */
+body.light-theme {
+  background-color: #f8f9fa; /* softer than pure white */
+  color: #212529;
+}
+
+body.light-theme a {
+  color: #0d6efd;
+}
+body.light-theme a:hover {
+  color: #0b5ed7;
+}
+
+/* Navbar */
+body.light-theme .navbar {
+  background-color: #ffffff !important;
+  border-bottom: 1px solid #ddd;
+}
+body.light-theme .nav-link {
+  color: #212529 !important;
+}
+body.light-theme .nav-link.active {
+  color: #0d6efd !important;
+}
+
+/* Cards */
+body.light-theme .card,
+body.light-theme .border,
+body.light-theme .shadow-sm {
+  background-color: #ffffff !important;
+  border-color: #ddd !important;
+  color: #212529 !important;
+}
+
+/* Buttons */
+body.light-theme .btn {
+  background-color: #f8f9fa;
+  color: #212529;
+  border-color: #ccc;
+}
+body.light-theme .btn:hover {
+  background-color: #e9ecef;
+}
+
+/* Lists */
+body.light-theme .list-group-item {
+  background: transparent;
+  color: #212529;
+  border-color: #ddd;
+}
+
+/* Forms */
+body.light-theme input,
+body.light-theme textarea,
+body.light-theme select {
+  background-color: #ffffff;
+  color: #212529;
+  border: 1px solid #ccc;
+}
+body.light-theme input::placeholder,
+body.light-theme textarea::placeholder {
+  color: #6c757d;
+}
+
+body.light-theme footer {
+  background-color: #f1f1f1;
+  color: #555;
+}
+
+body.light-theme ::-webkit-scrollbar-thumb {
+  background: #bbb;
+}
+body.light-theme ::-webkit-scrollbar-thumb:hover {
+  background: #999;
+}

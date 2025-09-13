@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, OnInit, Renderer2 } from '@angular/core';
 import { RouterLink, RouterModule } from '@angular/router';
 
 @Component({
@@ -9,6 +9,6 @@ import { RouterLink, RouterModule } from '@angular/router';
   templateUrl: './header.component.html',
   styleUrl: './header.component.css'
 })
-export class HeaderComponent {
-
+export class HeaderComponent{
+  
 }
