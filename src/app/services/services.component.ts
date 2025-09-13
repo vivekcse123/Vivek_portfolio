@@ -92,7 +92,7 @@ export class ServicesComponent implements OnInit{
     '9g7BaOkPC1lcih73D'
   )
   .then((result: EmailJSResponseStatus) => {
-    this.message = "Thank you! We'll get back to you soon...!";
+    this.message = "Thank you! we'll get back to you soon...!";
     setTimeout(() =>{
       this.message = "";
     }, 3000);

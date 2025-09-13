@@ -12,6 +12,6 @@ export const routes: Routes = [
     {path: 'project', component: ProjectsComponent, title: 'My Projects'},
     {path: 'resume', component: ResumeComponent, title: 'Vivek\'s Resume'},
     {path: 'services', component: ServicesComponent, title: 'My Services'},
-    {path: 'contact', component: ContactComponent, title: 'Contact Vivek'},
+    {path: 'contact', component: ContactComponent, title: 'Contact Me'},
     {path: '**', component: PageNotFoundComponent, title: "Page not found!"}
 ];
