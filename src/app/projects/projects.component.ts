@@ -15,6 +15,11 @@ export class ProjectsComponent {
       description: 'A responsive Angular web app to manage Customers data with CRUD operations using RESTful APIs.',
       link: 'https://github.com/vivekcse123/CMS-Project'
     },
+     {
+      title: 'Apan Blog Web Application',
+      description: 'An open source web application to read and post blogs on ApnaBlog Application',
+      link: 'https://github.com/vivekcse123/apan-blog'
+    },
     {
       title: 'Portfolio Website',
       description: 'My personal portfolio website built using Angular, TypeScript, HTML, CSS, JavaScript, and Bootstrap.',
