@@ -32,7 +32,7 @@ export class ProjectsComponent {
     },
     {
       title: 'Angular Sharing Data',
-      description: 'Sharing data between components using Observable.2-5',
+      description: 'Sharing data between components using Observable.',
       link: 'https://github.com/vivekcse123/Angular-Observable'
     }
   ];
