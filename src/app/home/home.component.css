@@ -1,65 +1,271 @@
+/* 🌌 HERO SECTION */
 .hero {
-  background: linear-gradient(to right, #1e3c72, #2a5298);
-  color: white;
-  padding: 80px 0;
+  background: linear-gradient(135deg, #1e3c72, #2a5298);
+  color: #ffffff;
+  padding: 120px 40px;
+  border-radius: 25px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
+  position: relative;
+  overflow: hidden;
+  backdrop-filter: blur(20px);
 }
 
-.hero h1 {
-  font-size: 2.5rem;
-  text-align: left;
-  margin-bottom: 15px;
-  letter-spacing: 4px;
+.hero::before {
+  content: "";
+  position: absolute;
+  top: -40px;
+  right: -60px;
+  width: 250px;
+  height: 250px;
+  background: radial-gradient(circle, rgba(0, 255, 255, 0.25), transparent 70%);
+  z-index: 0;
+}
+
+.hero .container {
+  position: relative;
+  z-index: 2;
+}
+
+.hero h2 {
+  font-size: 3rem;
+  font-weight: 700;
+  color: #f9fafb;
+  text-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+}
+
+.hero h2 span {
+  color: #ffeb3b;
+  text-shadow: 0 3px 12px rgba(255, 235, 59, 0.8);
 }
 
 .typing-text {
-  font-size: 2rem;
-  font-weight: bold;
-  min-height: 60px;
-  transition: color 0.4s ease-in-out;
-  text-align: left;
-  letter-spacing: 3px;
+  font-size: 1.8rem;
+  font-weight: 500;
+  color: #aee6ff;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+  margin-top: 15px;
 }
 
 .hero-img {
-  max-width: 300px;
-  border: 5px solid #fff;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+  max-width: 320px;
+  border-radius: 50%;
+  border: 4px solid rgba(255, 255, 255, 0.7);
+  box-shadow: 0 18px 45px rgba(0, 0, 0, 0.5);
+  transition: all 0.4s ease;
 }
 
+.hero-img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 22px 55px rgba(0, 0, 0, 0.6);
+}
 
-    .color1 { color: #FFD700; }
-    .color2 { color: #00FFFF; }
-    .color3 { color: #b2df0d; }
+/* 📘 ABOUT SECTION */
+#about {
+  width: 95%;
+  background: #ffffff;
+  color: #333;
+  padding: 100px 50px;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+  margin: 80px auto 0;
+  max-width: 1300px;
+}
 
-    .section {
-      padding: 60px 20px;
-    }
+#about h2 {
+  color: #2a5298;
+  font-size: 2.6rem;
+  font-weight: 700;
+  margin-bottom: 40px;
+  text-align: center;
+}
 
-    .section h2 {
-      font-weight: bold;
-      margin-bottom: 30px;
-    }
+.about-text {
+  max-width: 900px;
+  margin: 0 auto 30px auto;
+  font-size: 1.1rem;
+  line-height: 1.9;
+  color: #444;
+  text-align: justify;
+}
 
+.about-text + .about-text {
+  margin-top: 25px;
+}
+
+/* 🧠 SKILLS SECTION */
+#skills {
+  background: #f8f9fc;
+  padding: 100px 20px;
+}
+
+#skills h2 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #1e3c72;
+  margin-bottom: 60px;
+}
+
+#skills h4 {
+  font-size: 1.4rem;
+  font-weight: 600;
+  margin-bottom: 25px;
+}
+
+/* Section heading color highlights */
+.text-primary {
+  color: #007bff !important;
+  border-left: 5px solid #007bff;
+  padding-left: 12px;
+}
+
+.text-success {
+  color: #28a745 !important;
+  border-left: 5px solid #28a745;
+  padding-left: 12px;
+}
+
+.text-warning {
+  color: #ff9800 !important;
+  border-left: 5px solid #ff9800;
+  padding-left: 12px;
+}
+
+/* 🎯 Skill Card Design */
 .skill-card {
-  border-radius: 12px;
-  font-weight: 500;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-  transition: all 0.3s ease;
-  background: #fff;
+  background: #ffffff;
+  border: none;
+  border-radius: 18px;
+  padding: 25px 20px;
+  min-height: 180px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  transition: all 0.3s ease-in-out;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
 }
 
-.skill-card:hover {
-  background-color: #2a5298;
-  color: #fff;
-  transform: translateY(-5px);
-  cursor: default;
+/* Gradient overlay for hover */
+.skill-card::before {
+  content: "";
+  position: absolute;
+  top: -60%;
+  left: -60%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(135deg, rgba(30, 60, 114, 0.08), rgba(42, 82, 152, 0.15));
+  transform: rotate(25deg);
+  z-index: 0;
+  opacity: 0;
+  transition: all 0.4s ease;
+}
+
+.skill-card:hover::before {
+  opacity: 1;
 }
 
 .skill-card h5 {
-  font-weight: 600;
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #1e3c72;
+  margin-bottom: 10px;
+  position: relative;
+  z-index: 1;
 }
 
 .skill-card p {
   font-size: 0.95rem;
+  color: #555;
   margin: 0;
+  position: relative;
+  z-index: 1;
+  line-height: 1.6;
+}
+
+/* Hover effects */
+.skill-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+}
+
+/* ✨ Section dividers */
+#skills .mb-5 + h4 {
+  margin-top: 60px;
+  padding-top: 40px;
+  border-top: 2px dashed rgba(0, 0, 0, 0.1);
+}
+
+/* 💻 RESPONSIVE DESIGN */
+@media (max-width: 992px) {
+  .hero {
+    text-align: center;
+    padding: 90px 20px;
+  }
+
+  .hero h2 {
+    font-size: 2.4rem;
+  }
+
+  .typing-text {
+    font-size: 1.5rem;
+  }
+
+  .hero-img {
+    margin: 40px auto 0;
+    max-width: 260px;
+  }
+
+  #about {
+    padding: 80px 30px;
+    width: 95%;
+  }
+
+  .about-text {
+    font-size: 1.05rem;
+  }
+
+  #skills h2 {
+    font-size: 2rem;
+  }
+
+  #skills h4 {
+    font-size: 1.2rem;
+  }
+
+  .skill-card {
+    min-height: 160px;
+    padding: 18px;
+  }
+}
+
+/* 🌈 Small Screens */
+@media (max-width: 576px) {
+  .hero {
+    padding: 70px 15px;
+  }
+
+  .hero h2 {
+    font-size: 2rem;
+  }
+
+  .typing-text {
+    font-size: 1.3rem;
+  }
+
+  #about {
+    padding: 60px 20px;
+    width: 100%;
+  }
+
+  .about-text {
+    font-size: 1rem;
+    line-height: 1.8;
+  }
+
+  .skill-card {
+    min-height: 150px;
+  }
 }

@@ -1,95 +1,161 @@
 .resume-section {
-  background-color: #f8fafc;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  padding: 40px 0;
+  padding: 40px 20px;
   width: 100%;
+  background: linear-gradient(135deg, rgba(30, 60, 114, 0.5), rgba(42, 82, 152, 0.5));
+  backdrop-filter: blur(15px) saturate(180%);
+  -webkit-backdrop-filter: blur(15px) saturate(180%);
+  border-radius: 25px;
+  box-shadow: 0 16px 40px rgba(0,0,0,0.2);
 }
 
+/* Section Containers */
 .resume-section .container > div {
-  width: 100%;              
-  margin: 0 auto 40px auto; 
-  padding: 30px;           
+  width: 100%;
+  margin: 0 auto 40px auto;
+  padding: 30px;
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-radius: 20px;
+  box-shadow: 0 12px 36px rgba(0,0,0,0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.resume-section .container > div:hover {
+  transform: translateY(-5px) scale(1.01);
+  box-shadow: 0 16px 48px rgba(0,0,0,0.25);
 }
 
-.about-me-section {
-  background-color: #ffffff;
+/* About and Skills Section */
+.about-me-section, .skills-section {
+  background: rgba(255,255,255,0.15);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-radius: 20px;
+  padding: 25px;
+  margin-bottom: 30px;
 }
 
+/* Enhanced Experience Section */
 .experience-section {
-  background-color: #f1f5f9;
+  background: rgba(20, 30, 60, 0.25);
+  border-radius: 20px;
+  padding: 40px 25px;
+  position: relative;
+  overflow: hidden;
 }
 
-.skills-section {
-  background-color: #ffffff;
+/* Soft gradient overlay for better look */
+.experience-section::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: linear-gradient(135deg, rgba(42,82,152,0.25), rgba(30,60,114,0.25));
+  z-index: 0;
 }
 
-.resume-frame-section {
-  background-color: #f1f5f9;
+/* Each Experience Card */
+.experience-section .p-4 {
+  position: relative;
+  z-index: 1;
+  background: linear-gradient(135deg, rgba(255,255,255,0.15), rgba(42,82,152,0.25));
+  border: 1px solid rgba(255,255,255,0.2);
+  color: #9e9a9a;
+  border-radius: 18px;
+  transition: all 0.3s ease;
 }
 
-.resume-section h2, 
-.resume-section h3 {
+.experience-section .p-4:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 36px rgba(0,0,0,0.25);
+  background: linear-gradient(135deg, rgba(42,82,152,0.85), rgba(30,60,114,0.75));
+}
+
+/* Headings */
+.resume-section h2, .resume-section h3 {
   font-weight: 700;
-  color: #2a5298;
+  color: #e0f7ff;
   margin-bottom: 20px;
+  text-shadow: 0 2px 6px rgba(0,0,0,0.25);
 }
 
-.about-me-section p {
+/* Paragraphs */
+.about-me-section p, .experience-section p, .skills-section .list-group-item {
   font-size: 1.05rem;
-  color: #555;
+  color: #94989a;
 }
 
-.skills-section .list-group-item {
-  border: none;
-  padding-left: 0;
+/* Skills */
+.skill-box {
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
   font-size: 1rem;
-  color: #444;
+  color: #ffffff;
+  flex: 1 1 45%;
+  text-align: center;
+  border-radius: 15px;
+  margin: 10px;
+  padding: 20px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.skill-box:hover {
+  transform: translateY(-6px) scale(1.02);
+  box-shadow: 0 12px 36px rgba(0,0,0,0.25);
+  background: rgba(125, 140, 167, 0.85);
 }
 
+/* Resume Frame */
 .resume-frame-section iframe {
   width: 100%;
   height: 650px;
-  border-radius: 8px;
+  border-radius: 15px;
+  border: none;
+  box-shadow: 0 12px 36px rgba(0,0,0,0.2);
 }
 
+/* Download Button */
 .resume-section .btn {
   font-size: 1rem;
   padding: 10px 30px;
   font-weight: 600;
-  border-radius: 8px;
+  border-radius: 12px;
   transition: all 0.3s ease-in-out;
+  background: rgba(42, 82, 152, 0.9);
+  color: #ffffff;
+  border: none;
+  backdrop-filter: blur(8px);
 }
-.skill-box {
-  background: #ffffff;
-  border: 1px solid #e5e7eb;
-  font-size: 1rem;
-  color: #444;
-  flex: 1 1 45%; /* responsive, two per row on larger screens */
-  text-align: center;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
-
-.skill-box:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
-  background: #f9fafb;
+.resume-section .btn:hover {
+  background: rgba(30, 60, 114, 0.95);
+  color: #ffffff;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.25);
 }
 
-
-
-.resume-section .btn-outline-primary:hover {
-  background-color: #2a5298;
-  color: #fff;
-  border-color: #2a5298;
-}
-
-@media (max-width: 768px) {
+/* Responsive */
+@media (max-width: 992px) {
   .resume-section .container > div {
-    width: 100%; 
     padding: 20px;
-    margin-bottom: 30px;
   }
   .resume-frame-section iframe {
     height: 500px;
+  }
+}
+@media (max-width: 576px) {
+  .resume-section h2, .resume-section h3 {
+    font-size: 1.6rem;
+  }
+  .about-me-section p, 
+  .experience-section p, 
+  .skills-section .list-group-item {
+    font-size: 0.95rem;
+  }
+  .skill-box {
+    flex: 1 1 100%;
+    padding: 15px;
+  }
+  .resume-frame-section iframe {
+    height: 400px;
   }
 }

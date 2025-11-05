@@ -16,9 +16,9 @@ export class ProjectsComponent {
       link: 'https://github.com/vivekcse123/CMS-Project'
     },
      {
-      title: 'Apan Blog Web Application',
+      title: 'Apna Blog Web Application',
       description: 'An open source web application to read and post blogs on ApnaBlog Application',
-      link: 'https://github.com/vivekcse123/apan-blog'
+      link: 'https://github.com/vivekcse123/apnaBlog'
     },
     {
       title: 'Portfolio Website',

@@ -27,6 +27,15 @@ export class ServicesComponent implements OnInit{
       'message': new FormControl('', [Validators.minLength(50), Validators.maxLength(300)])
     });
    }
+   servicesList = [
+  { id: 'service1', label: 'Career Development Coaching', controlName: 'careerDevelopment' },
+  { id: 'service2', label: 'Resume Review', controlName: 'resumeReview' },
+  { id: 'service3', label: 'Interview Preparation', controlName: 'interviewPreparation' },
+  { id: 'service4', label: 'Teaching & Training', controlName: 'teachingTraining' },
+  { id: 'service5', label: 'Mentorship', controlName: 'mentorship' },
+  { id: 'service6', label: 'LinkedIn Profile Creation', controlName: 'linkedinProfile' },
+  { id: 'service7', label: 'Portfolio Guidance', controlName: 'portfolioGuidance' },
+];
 
    getSelectedServices() {
     const services: string[] = []; // array which contains all services....
